@@ -1,26 +1,21 @@
 all: server client gfx
 
 server:
-	make -C server all
-	cp server/build/server .
+	@make -C server all
 
 client:
-	make -C client all
-	cp client/build/client .
+	@make -C client all
 
 gfx:
-	make -C gfx all
-	cp gfx/build/gfx .
+	@make -C gfx all
 
 clean:
-	make -C server clean
-	make -C client clean
-	make -C gfx clean
+	@make -C server clean
+	@make -C client clean
+	@make -C gfx clean
 
 fclean: clean
-	rm -f server
-	rm -f client
-	rm -f gfx
+	@rm -dfr bin
 
 re: fclean all
 

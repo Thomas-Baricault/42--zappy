@@ -26,6 +26,10 @@ if(NOT DEFINED TARGETS)
     set(TARGETS "")
 endif()
 
+if(NOT DEFINED COMMON)
+    set(COMMON "")
+endif()
+
 
 if(ENV)
     set(
@@ -39,9 +43,16 @@ if(ENV)
 endif()
 
 
+set(
+    CMAKE_RUNTIME_OUTPUT_DIRECTORY
+    "${CMAKE_CURRENT_SOURCE_DIR}/../bin"
+)
+
+
 separate_arguments(PACKAGES)
 separate_arguments(TARGETS)
 separate_arguments(SRC)
+separate_arguments(COMMON)
 
 
 list(TRANSFORM SRC REPLACE "^(.+)$" "src/\\1.cpp")
