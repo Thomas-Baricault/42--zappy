@@ -1,6 +1,9 @@
 #pragma once
 
 
+#include "Direction.hpp"
+
+
 class Trantorian final
 {
 
@@ -20,6 +23,9 @@ class Trantorian final
     private:
 
         int mTeam;
+
+        Direction mDirection = Direction::East;
+
         // 1 food = survive 126 time units
         int mFood = 0;
 
